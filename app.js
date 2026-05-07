@@ -5,7 +5,7 @@ import express from 'express';
 import {createServer} from 'http';
 
 import routes from './routes/index.js';
-import errorHandler from '.milddlewares/errorHandler.js';
+import errorHandler from './milddlewares/errorHandler.js';
 
 const app = express();
 
