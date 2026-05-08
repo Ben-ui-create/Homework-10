@@ -1,6 +1,7 @@
 import moment from 'moment';
-import HttpErrors from 'http-errors';
-import Users from '../models/users.js';
+import HttpErrors from "http-errors";
+
+import Users from '../models/users.js'
 
 export default async (req, res, next) => {
   try {
@@ -19,22 +20,23 @@ export default async (req, res, next) => {
     }
 
     if (moment().isAfter(moment(decryptData.expiresIn))) {
-      next(new HttpErrors(401, 'Token expired'));
+      next(new HttpErrors(401, 'Token expired!'));
       return;
     }
 
-    req.userId = decryptData.userId;
+    req.userId = decryptData?.userId;
 
-    const user = await Users.findById(req.userId);
+    const user = await Users.findById(req.userId)
 
     if (!user) {
       next(new HttpErrors(401));
       return;
     }
 
+
     next();
-  } catch (e) {
-    console.error(e);
+  } catch (err) {
+    console.log(err);
     next(new HttpErrors(401));
   }
 }

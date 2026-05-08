@@ -5,16 +5,16 @@ const validator = (schema, path = 'body') => (req, res, next) => {
   try {
     const v = schema.validate(req[path], { abortEarly: false });
 
-    if (v.errors) {
+    if (v.error) {
       const errors = {};
 
-      v.errors.details.forEach((d) => {
-        const errorMessage = d.message.replace(/".*"/, "").trim();
+      v.error.details.forEach((d) => {
+        const errorMessage = d.message.replace(/".*"/, '').trim();
         _.set(errors, d.path, errorMessage);
       });
 
       throw new HttpErrors(422, {
-        message: 'Validation failed',
+        message: 'Validation error',
         errors,
       });
     }

@@ -2,16 +2,18 @@ import { Router } from 'express';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to Post',
-  });
-});
 
-router.post('/', (req, res) => {
-  res.json({
-    message: 'Welcome to Post',
-  });
-});
+import controller from '../controllers/posts.js';
+
+import validation from '../middlewares/validation.js';
+import schema from '../middlewares/schemas/posts.schema.js';
+
+router.get(
+  '/create',
+  validation(schema.createPost, 'body'),
+  controller.createPost,
+);
+
+
 
 export default router;

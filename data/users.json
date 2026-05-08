@@ -1,0 +1,30 @@
+[
+  {
+    "name": "beno",
+    "email": "benoexample@email.com",
+    "password": "e0922c89f555baff84daf2f219bc8c2b",
+    "age": "20",
+    "id": "58fb84b5-e1d6-4863-997a-86b70a73870d"
+  },
+  {
+    "name": "valod",
+    "email": "valod@email.com",
+    "password": "0f53a23b49e2e53aee2ef180d11eef6d",
+    "age": "20",
+    "id": "9718d5a1-e8c8-43e7-addd-fbef07dbbfc7"
+  },
+  {
+    "name": "varuj",
+    "email": "varuj@email.com",
+    "password": "0f53a23b49e2e53aee2ef180d11eef6d",
+    "age": "20",
+    "id": "7e661fa9-5834-4b45-841e-2e780151f6ad"
+  },
+  {
+    "name": "kuku",
+    "email": "kukulala@email.com",
+    "password": "0f53a23b49e2e53aee2ef180d11eef6d",
+    "age": "20",
+    "id": "08eb1b97-6d99-4b14-86ca-a68e9c5dac26"
+  }
+]

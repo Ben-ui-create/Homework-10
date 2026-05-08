@@ -4,7 +4,7 @@ import controller from '../controllers/users.js';
 
 import validation from '../middlewares/validation.js';
 import schema from '../middlewares/schemas/users.schema.js';
-import auth from '../middlewares/authorization.js';
+import authorization from "../middlewares/authorization.js";
 
 const router = Router();
 
@@ -22,18 +22,19 @@ router.post(
 
 router.get(
   '/profile',
-  auth,
+  authorization,
   controller.profile,
 );
 
 router.put(
   '/profile',
-  auth,
+  authorization,
   validation(schema.update, 'body'),
   controller.update,
 );
 
-router.get('register', (req, res) => {
+// views
+router.get('/register', (req, res) => {
   res.render('register');
 });
 

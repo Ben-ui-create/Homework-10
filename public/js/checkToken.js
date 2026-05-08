@@ -7,7 +7,7 @@ if (!localStorage.getItem('token')) {
 
   try {
     const response = await fetch('/users/profile', {
-      method: 'POST',
+      method: 'get',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `${token}`,
@@ -17,13 +17,13 @@ if (!localStorage.getItem('token')) {
     const result = await response.json();
 
     if (!response.ok) {
-      alert('Invalid token');
+      alert('Invalid token!');
       window.location.href = '/users/login';
     }
 
     localStorage.setItem('userDate', JSON.stringify(result.user));
-  } catch (e) {
-    alert('Invalid token');
+  } catch (error) {
+    alert('Invalid token!');
     window.location.href = '/users/login';
   }
 })();
